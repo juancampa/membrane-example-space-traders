@@ -1,0 +1,67 @@
+{
+  "tags": ["example", "space-traders", "game"],
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "actions": [
+          {
+            "name": "mine",
+            "type": "Void",
+            "params": [
+              {
+                "name": "symbol",
+                "type": "String"
+              }
+            ]
+          }
+        ],
+        "fields": [
+          {
+            "name": "mining",
+            "type": "MiningBehavior",
+            "params": [
+              {
+                "name": "symbol",
+                "type": "String"
+              }
+            ]
+          },
+          {
+            "name": "status",
+            "type": "String"
+          }
+        ]
+      },
+      {
+        "name": "MiningBehavior",
+        "actions": [
+          {
+            "name": "start",
+            "type": "Void",
+            "params": []
+          },
+          {
+            "name": "stop",
+            "type": "Void"
+          },
+          {
+            "name": "navigateToDeposit",
+            "type": "Void"
+          },
+          {
+            "name": "doExtract",
+            "type": "Void"
+          },
+          {
+            "name": "trade",
+            "type": "Void"
+          }
+        ]
+      }
+    ]
+  },
+  "dependencies": {
+    "space_traders": "space-traders:"
+  }
+}
