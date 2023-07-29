@@ -6,7 +6,12 @@ This example implements a basic extract/trade cycle for any number of ships but 
 
 It's intended to be a good starting point for implementing more advanced logic.
 
+<video autoplay loop muted playsinline>
+  <source src="" type="video/mp4">
+</video>
+
 https://github.com/juancampa/membrane-example-space-traders/assets/1410520/4e0b0717-294a-4d8e-b831-029fc60bd902
+
 
 ## Why play SpaceTraders on Membrane
 
