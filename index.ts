@@ -3,7 +3,7 @@
 // `state` is an object that persists across program updates. Store data here.
 import { nodes, root, state } from "membrane";
 
-export async function mine({ args: { symbol } }) {
+export async function mine({ symbol }) {
   await root.mining({ symbol }).start();
 }
 
@@ -42,7 +42,7 @@ function getShip(self) {
 }
 
 export const Root = {
-  status: ({ self }) => {
+  status: (_, { self }) => {
     let total = 0;
     for (const ship of Object.values(state.ships)) {
       total += (ship as any).profit;
@@ -52,14 +52,14 @@ export const Root = {
 };
 
 export const MiningBehavior = {
-  async stop({ self }) {
+  async stop(_, { self }) {
     const ship = getShip(self);
     if (ship.timer) {
       unsubscribe(ship.timer);
       ship.timer = null;
     }
   },
-  async start({ self }) {
+  async start(_, { self }) {
     const ship = getShip(self);
     ship.mining = {
       deposits: [],
@@ -102,7 +102,7 @@ export const MiningBehavior = {
     goTo(self, "navigateToDeposit", cooldown);
   },
 
-  async navigateToDeposit({ self }) {
+  async navigateToDeposit(_, { self }) {
     const ship = getShip(self);
     const nav = await ship.inner.nav.$get();
 
@@ -119,7 +119,7 @@ export const MiningBehavior = {
     }
   },
 
-  async doExtract({ self }) {
+  async doExtract(_, { self }) {
     const ship = getShip(self);
 
     // Extract!
@@ -153,7 +153,7 @@ export const MiningBehavior = {
     }
   },
 
-  async trade({ self }) {
+  async trade(_, { self }) {
     const ship = getShip(self);
     await ship.inner.dock();
 
