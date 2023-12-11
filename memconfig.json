@@ -39,7 +39,7 @@
             "description": "Field representing the status"
           }
         ],
-        "description": "Space Traders Example Driver"
+        "description": "Example of how to play Space Trades" 
       },
       {
         "name": "MiningBehavior",
