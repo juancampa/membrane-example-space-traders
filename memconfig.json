@@ -1,5 +1,9 @@
 {
-  "tags": ["example", "space-traders", "game"],
+  "tags": [
+    "example",
+    "space-traders",
+    "game"
+  ],
   "schema": {
     "types": [
       {
@@ -13,7 +17,8 @@
                 "name": "symbol",
                 "type": "String"
               }
-            ]
+            ],
+            "description": "Action to initiate mining"
           }
         ],
         "fields": [
@@ -25,13 +30,16 @@
                 "name": "symbol",
                 "type": "String"
               }
-            ]
+            ],
+            "description": "Field representing the mining behavior"
           },
           {
             "name": "status",
-            "type": "String"
+            "type": "String",
+            "description": "Field representing the status"
           }
-        ]
+        ],
+        "description": "Example of how to play Space Trades" 
       },
       {
         "name": "MiningBehavior",
@@ -39,25 +47,31 @@
           {
             "name": "start",
             "type": "Void",
-            "params": []
+            "params": [],
+            "description": "Action to start the mining behavior."
           },
           {
             "name": "stop",
-            "type": "Void"
+            "type": "Void",
+            "description": "Action to stop the mining behavior."
           },
           {
             "name": "navigateToDeposit",
-            "type": "Void"
+            "type": "Void",
+            "description": "Action to navigate to the deposit location."
           },
           {
             "name": "doExtract",
-            "type": "Void"
+            "type": "Void",
+            "description": "Action to perform the extraction process."
           },
           {
             "name": "trade",
-            "type": "Void"
+            "type": "Void",
+            "description": "Action to initiate a trade."
           }
-        ]
+        ],
+        "description": "Type representing the behavior of a mining entity in space trading."
       }
     ]
   },
